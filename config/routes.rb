@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # user registration, login and authentication routes:
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
-  get 'login' => 'users#new'
-  post 'login' => 'users#create'
+  get 'login' => 'users#login'
+  post 'login' => 'sessions#create'
   # add user nested routes here!
   post 'logout' => 'sessions#destroy'
 
