@@ -17,7 +17,11 @@ class SessionsController < ApplicationController
     private
 
     def user_params
-        params.permit(:email, :name)
+        if request.env['omniauth.data']
+            params.permit(:email, :name)
+        else
+            # add non-oauth logic here
+        end
         # in the future keep track of the provider / strategy too:
         #params.permit(:email, :name, :provider)
     end
