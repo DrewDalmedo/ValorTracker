@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
   get 'login' => 'users#login'
-  post 'login' => 'sessions#create'
+  post 'login' => 'sessions#create', as: 'login_session'
   # registration
   get 'register' => 'users#register'
   post 'register' => 'users#create'
