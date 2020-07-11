@@ -1,5 +1,5 @@
 <%= form_with model: User.new, url: '/login', method: 'post' do |f| %>
-    <%= f.text_field :email %>
+    <%= f.text_field :name %>
     <%= f.password_field :password %>
     <%= f.submit "Login" %>
 <% end %>
