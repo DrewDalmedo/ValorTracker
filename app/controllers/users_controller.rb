@@ -5,11 +5,14 @@ class UsersController < ApplicationController
     end
 
     def login
-        render 'login'
+        #render 'login'
     end
 
     def register
-        render 'register'
+        #render 'register'
+    end
+
+    def create
     end
 
     def show
