@@ -13,4 +13,12 @@ class SessionsController < ApplicationController
 
     def destroy
     end
+
+    private
+
+    def user_params
+        params.permit(:email, :name)
+        # in the future keep track of the provider / strategy too:
+        #params.permit(:email, :name, :provider)
+    end
 end
