@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'login' => 'users#login'
   post 'login' => 'sessions#create'
+  # registration
+  get 'register' => 'users#register'
+  post 'register' => 'users#create'
   # add user nested routes here!
   post 'logout' => 'sessions#destroy'
 
