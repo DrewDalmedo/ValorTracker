@@ -4,15 +4,12 @@ class UsersController < ApplicationController
     def index
     end
 
-    def login
-        #render 'login'
-    end
-
-    def register
-        #render 'register'
+    def new
+        render 'register'
     end
 
     def create
+        
     end
 
     def show
