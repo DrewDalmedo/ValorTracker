@@ -30,6 +30,13 @@ gem 'bcrypt', '~> 3.1.7'
 # env gem used to make .env more secure:
 gem 'dotenv-rails'
 
+# OmniAuth Gems
+gem 'omniauth'
+# add types of omniauth here!
+#gem 'omniauth-discord'
+#gem 'omniauth-google'
+#gem 'omniauth-twitch'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -46,11 +53,6 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'omniauth'
-  # add types of omniauth here!
-  #gem 'omniauth-discord'
-  #gem 'omniauth-google'
-  #gem 'omniauth-twitch'
   gem 'rspec-rails'
 end
 
