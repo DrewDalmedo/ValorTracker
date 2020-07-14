@@ -11,3 +11,9 @@
     <%= f.password_field :password %><br>
     <%= f.submit "Register" %>
 <% end %>
+
+<!--Maybe use a helper method for these in the future?-->
+<%= link_to 'Register with Developer', '/auth/developer' %>
+<%= link_to 'Register with Discord', '/auth/discord' %>
+<%= link_to 'Register with Twitch', '/auth/twitch' %>
+<%= link_to 'Register with Google', '/auth/google' %>
