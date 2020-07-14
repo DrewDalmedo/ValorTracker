@@ -9,3 +9,9 @@
     <%= f.password_field :password %><br>
     <%= f.submit "Login" %><br>
 <% end %>
+
+<!--Maybe use a helper method for these in the future?-->
+<%= link_to 'Login with Developer', '/auth/developer' %>
+<%= link_to 'Login with Discord', '/auth/discord' %>
+<%= link_to 'Login with Twitch', '/auth/twitch' %>
+<%= link_to 'Login with Google', '/auth/google' %>
