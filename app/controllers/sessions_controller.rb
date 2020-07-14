@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
     def new
         if session[:name]
             redirect_to root_path
+        else
+            render 'login'
         end
-        render 'login'
     end
 
     def create
