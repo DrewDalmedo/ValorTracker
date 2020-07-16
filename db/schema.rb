@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_203536) do
-
-  create_table "agents", force: :cascade do |t|
-    t.string "name"
-    t.string "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2020_07_16_210948) do
 
   create_table "guides", force: :cascade do |t|
     t.string "title"
@@ -30,19 +23,6 @@ ActiveRecord::Schema.define(version: 2020_07_16_203536) do
 
   create_table "maps", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "matches", force: :cascade do |t|
-    t.integer "kills"
-    t.integer "deaths"
-    t.integer "assists"
-    t.integer "friendly_team_score"
-    t.integer "enemy_team_score"
-    t.integer "agent_id"
-    t.integer "map_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
