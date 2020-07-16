@@ -33,9 +33,7 @@ gem 'dotenv-rails'
 # OmniAuth Gems
 gem 'omniauth'
 # add types of omniauth here!
-#gem 'omniauth-discord'
 #gem 'omniauth-google'
-#gem 'omniauth-twitch'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
