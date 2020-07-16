@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   end
   get 'logout' => 'sessions#destroy'
 
-
+  resources :maps
+  get 'maps/:id/delete' => 'maps#destroy', as: 'delete_map'
+  
+  resources :guides
+  get 'guides/:id/delete' => 'guides#destroy', as: 'delete_guide'
 end
