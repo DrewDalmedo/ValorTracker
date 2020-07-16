@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_223018) do
+ActiveRecord::Schema.define(version: 2020_07_16_203536) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2020_07_10_223018) do
   create_table "guides", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "agent_id"
     t.integer "map_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
