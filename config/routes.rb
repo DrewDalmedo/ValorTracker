@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get 'register' => 'users#new'
   post 'register' => 'users#create'
   # add user nested routes here!
+  resources :users, only: [:show, :edit, :update] do
+    #resources :matches
+    resources :guides
+  end
   get 'logout' => 'sessions#destroy'
 
 
