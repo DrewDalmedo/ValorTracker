@@ -33,7 +33,7 @@ gem 'dotenv-rails'
 # OmniAuth Gems
 gem 'omniauth'
 # add types of omniauth here!
-#gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
