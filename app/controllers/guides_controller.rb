@@ -8,7 +8,6 @@ class GuidesController < ApplicationController
     end
 
     def create
-        byebug
         @guide = Guide.create(guide_params)
         redirect_to guide_path(@guide)
     end
