@@ -1,0 +1,10 @@
+<%= form_with model: guide do |f| %>
+    <%= f.hidden_field :user_id, value: user.id %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+    <%= f.label 'Map:'%><br>
+    <%= f.collection_select :map_id, Map.all, :id, :name%><br>
+    <%= f.label :body%><br>
+    <%= f.text_field :body %><br>
+    <%= f.submit %>
+<% end %>
