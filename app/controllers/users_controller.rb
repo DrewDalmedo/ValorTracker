@@ -21,17 +21,14 @@ class UsersController < ApplicationController
     end
 
     def show
-        #byebug
         @user = User.find(params[:id])
     end
 
     def edit
-        #byebug
         @user = User.find(params[:id])
     end
 
     def update
-        byebug
         @user = User.find(params[:id])
         @user.update(user_params)
         redirect_to user_path(@user)
