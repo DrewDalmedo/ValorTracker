@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     #resources :matches
     resources :guides
+    get 'guides/:id/delete' => 'guides#destroy', as: 'delete_guide'
   end
   get 'logout' => 'sessions#destroy'
 
   resources :maps
   get 'maps/:id/delete' => 'maps#destroy', as: 'delete_map'
   
-  resources :guides
-  get 'guides/:id/delete' => 'guides#destroy', as: 'delete_guide'
+  resources :guides, only: [:index, :show]
 end
