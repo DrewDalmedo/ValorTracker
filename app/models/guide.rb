@@ -8,7 +8,7 @@ class Guide < ApplicationRecord
     validates :map_id, presence: true
 
     # scope method
-    scope :created_after, -> (time) { where("created_at > ?", time) }
+    scope :char_count, -> (num) { where("LENGTH(body) > ?", num) }
 
     # relationships
     belongs_to :map
