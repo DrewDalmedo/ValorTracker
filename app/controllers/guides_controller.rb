@@ -12,7 +12,12 @@ class GuidesController < ApplicationController
 
     def create
         @guide = Guide.create(guide_params)
-        redirect_to guide_path(@guide)
+        if @guide.valid?
+            redirect_to guide_path(@guide)
+        else
+            flash[:alert] = @guides.errors.full_messages
+            redirect_to new_user_guide_path(params[:user_id])
+        end
     end
 
     def show
@@ -25,13 +30,21 @@ class GuidesController < ApplicationController
     end
 
     def update
+        #byebug
         @guide = Guide.find(params[:id])
         @guide.update(guide_params)
 
-        redirect_to guide_path(@guide)
+        if @guide.valid?
+            redirect_to user_guide_path(@guide.user, @guide)
+        else
+            flash[:alert] = @guide.errors.full_messages
+            redirect_to edit_user_guide_path(@guide.user, @guide)
+        end
+        
     end
 
     def destroy
+        #byebug
         @guide = Guide.find(params[:id])
         @guide.destroy
         redirect_to guides_path
@@ -44,7 +57,14 @@ class GuidesController < ApplicationController
     end
 
     def check_if_same_author
-        return head(:forbidden) unless params[:user_id] == session[:user_id].to_s
+        if params[:guide]
+            puts "bazinga"
+            return head(:forbidden) unless params[:guide][:user_id] == session[:user_id].to_s
+        else
+            puts "billy bongo"
+            return head(:forbidden) unless params[:user_id] == session[:user_id].to_s
+        end
+        
     end
 
     def guide_params
