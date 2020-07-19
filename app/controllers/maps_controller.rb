@@ -8,7 +8,12 @@ class MapsController < ApplicationController
 
     def create
         @map = Map.create(map_params)
-        redirect_to map_path(@map)
+        if @map.valid?
+            redirect_to map_path(@map)
+        else
+            flash[:alert] = @map.errors.full_messages
+            redirect_to new_map_path
+        end
     end
 
     def show
@@ -22,7 +27,13 @@ class MapsController < ApplicationController
     def update
         @map = Map.find(params[:id])
         @map.update(map_params)
-        redirect_to map_path(@map)
+        #byebug
+        if @map.valid?
+            redirect_to map_path(@map)
+        else
+            flash[:alert] = @map.errors.full_messages
+            redirect_to edit_map_path(@map)
+        end
     end
 
     def destroy
