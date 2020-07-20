@@ -1,0 +1,17 @@
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+<% end %>
+
+<%= form_with model: User.new, url: '/register', method: 'post' do |f| %>
+    <%= f.label "Username" %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :email%><br>
+    <%= f.text_field :email %><br>
+    <%= f.label :password%><br>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Register" %>
+<% end %>
+
+<!--Maybe use a helper method for these in the future?-->
+<%= link_to 'Register with Developer', '/auth/developer' %><br>
+<%= link_to 'Register with Google', '/auth/google_oauth2' %><br>

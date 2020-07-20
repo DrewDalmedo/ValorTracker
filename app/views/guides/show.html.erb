@@ -1,0 +1,7 @@
+<%= @guide.title %><br>
+By <%= link_to @guide.user.name, user_path(@guide.user) %><br>
+<%= @guide.body %><br>
+<%= link_to @guide.map.name, map_path(@guide.map) %><br>
+<br>
+<%= link_to 'Edit Guide', edit_user_guide_path(@guide.user, @guide) %>
+<%= link_to 'Delete Guide', user_delete_guide_path(@guide.user, @guide) %>

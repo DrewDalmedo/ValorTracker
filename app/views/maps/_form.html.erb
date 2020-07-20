@@ -1,0 +1,11 @@
+<% if flash[:alert] %>
+    <% flash[:alert].each do |msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %><br>
+    <% end %>
+<% end %>
+
+<%= form_with model: map do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.submit %>
+<% end %>
