@@ -17,16 +17,19 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     #resources :matches
     resources :guides
+    # for some unholy reason deleting won't work unless i do this badness
     get '/guides/:id/delete' => 'guides#destroy', as: 'delete_guide'
     
   end
   get '/logout' => 'sessions#destroy'
 
   resources :maps
+  # see line 20
   get '/maps/:id/delete' => 'maps#destroy', as: 'delete_map'
   
   resources :guides, only: [:index, :show]
   
+  # creating and updating guides will also not work unless i do this badness
   post '/guides/' => 'guides#create'
   patch '/guides/:id' => 'guides#update'
 end
