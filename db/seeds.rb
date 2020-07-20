@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Map.create(name: "Ascent")
+Map.create(name: "Bind")
+Map.create(name: "Haven")
+Map.create(name: "Split")
