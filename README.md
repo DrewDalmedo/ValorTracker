@@ -1,24 +1,35 @@
-# README
+# ValorTracker
+An MVC web app for Riot's Valorant.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
+ValorTracker is a web app designed to allow users to keep track of various Valorant-related things. Right now, the app supports the creation of guides for the different maps currently in the game. All data is persisted to an SQLite database, with plans to move to PostgreSQL later.
 
-Things you may want to cover:
+This app uses [Rails](https://rubyonrails.org/), a framework for creating web apps.
 
-* Ruby version
+## Usage
+Currently, you must run a local development server to use the app.
 
-* System dependencies
+First, open a terminal and clone the repository:
+```
+$ git clone https://github.com/DrewDalmedo/ValorTracker
+```
 
-* Configuration
+Next, `cd` into the ValorTracker directory and run `bundle install` to install the app's dependencies:
+```
+cd ValorTracker && bundle install
+```
 
-* Database creation
+After installing the app's dependencies, you need to run a database migration:
+```
+$ rails db:migrate
+```
 
-* Database initialization
+If you want the database to be populated, you must also seed the database:
+```
+$ rails db:seed
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Finally, run `rails s` to get the server running and go to `localhost:3000` in your browser:
+```
+$ rails s
+```
