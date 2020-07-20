@@ -14,23 +14,12 @@ class SessionsController < ApplicationController
 
     def create
         #byebug
-        if auth           # if logged in using omniauth
+        if auth # if logged in using omniauth
             @user = User.find_by(email: auth['info']['email'])
-            if @user && @user.omniauth == false
-                flash[:alert] = "A user with your email already exists!"
-                redirect_to login_path
-            elsif @user.nil?
-                @user = User.new()
-                @user.name = auth['info']['name']
-                @user.email = auth['info']['email']
-                @user.password = SecureRandom.hex
-                @user.omniauth = true
-                @user.save
-            end
-
+            sessions_helper.check_if_user_exists @user, auth, flash
             session[:user_id] = @user.id
             redirect_to root_path
-        else              # if logged in manually
+        else    # if logged in manually
             login_info = params[:user]
             @user = User.find_by(name: login_info[:name])
             #byebug
@@ -50,6 +39,10 @@ class SessionsController < ApplicationController
     end
 
     private
+
+    def sessions_helper
+        ApplicationController.helpers
+    end
 
     def auth
         request.env['omniauth.auth']
