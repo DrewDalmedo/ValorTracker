@@ -1,3 +1,5 @@
+<%= link_to 'Guide Index', guides_path %><br>
+<br>
 <%= @guide.title %><br>
 By <%= link_to @guide.user.name, user_path(@guide.user) %><br>
 <%= @guide.body %><br>
